@@ -1,0 +1,761 @@
+{
+  "Input": {
+    "category": "Form",
+    "description": "A basic text input field with optional configurations for various input types.",
+    "tags": ["input", "form", "text", "field", "email", "password", "search"],
+    "variants": [
+      {
+        "name": "Basic Input",
+        "description": "Standard input for simple text entry.",
+        "snippet": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"input\">Label</Label>\n  <InputContainer>\n    <Input id=\"input\" type=\"text\" aria-required=\"true\" />\n  </InputContainer>\n</Utility>"
+      },
+      {
+        "name": "Input with Icon",
+        "description": "An input field that includes a leading icon for enhanced UX.",
+        "snippet": "import { VisaSearchTiny } from '@visa/nova-icons-react';\nimport { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"search\">Search</Label>\n  <InputContainer>\n    <VisaSearchTiny />\n    <Input id=\"search\" type=\"text\" placeholder=\"Search...\" />\n  </InputContainer>\n</Utility>"
+      },
+      {
+        "name": "Email Input",
+        "description": "Email input with proper validation attributes.",
+        "snippet": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"email\">Email Address</Label>\n  <InputContainer>\n    <Input id=\"email\" type=\"email\" placeholder=\"user@example.com\" aria-required=\"true\" />\n  </InputContainer>\n</Utility>"
+      },
+      {
+        "name": "Password Input",
+        "description": "Secure password input field.",
+        "snippet": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"password\">Password</Label>\n  <InputContainer>\n    <Input id=\"password\" type=\"password\" placeholder=\"Enter password\" aria-required=\"true\" />\n  </InputContainer>\n</Utility>"
+      },
+      {
+        "name": "Disabled Input",
+        "description": "A disabled input field for non-editable data display.",
+        "snippet": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"disabled\">Disabled Field</Label>\n  <InputContainer>\n    <Input id=\"disabled\" type=\"text\" disabled value=\"Not editable\" />\n  </InputContainer>\n</Utility>"
+      }
+    ]
+  },
+  "Button": {
+    "category": "Action",
+    "description": "Interactive button component for triggering actions with multiple variants and states.",
+    "tags": [
+      "button",
+      "action",
+      "click",
+      "submit",
+      "primary",
+      "secondary",
+      "cta"
+    ],
+    "variants": [
+      {
+        "name": "Primary Button",
+        "description": "Main action button with highest visual priority.",
+        "snippet": "import { Button } from '@visa/nova-react';\n\n<Button>Primary Action</Button>"
+      },
+      {
+        "name": "Secondary Button",
+        "description": "Secondary action with medium visual priority.",
+        "snippet": "import { Button } from '@visa/nova-react';\n\n<Button className=\"v-button--secondary\">Secondary Action</Button>"
+      },
+      {
+        "name": "Destructive Button",
+        "description": "For dangerous actions like delete or remove.",
+        "snippet": "import { Button } from '@visa/nova-react';\n\n<Button className=\"v-button--destructive\">Delete Item</Button>"
+      },
+      {
+        "name": "Button with Icon",
+        "description": "Button enhanced with an icon for better visual communication.",
+        "snippet": "import { Button, Utility } from '@visa/nova-react';\nimport { GenericPlusTiny } from '@visa/nova-icons-react';\n\n<Button>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <GenericPlusTiny />\n    Add Item\n  </Utility>\n</Button>"
+      },
+      {
+        "name": "Loading Button",
+        "description": "Button with loading state for async operations.",
+        "snippet": "import { Button } from '@visa/nova-react';\n\n<Button disabled>\n  Processing...\n</Button>"
+      }
+    ]
+  },
+  "Label": {
+    "category": "Form",
+    "description": "Accessible label component for form controls with proper association.",
+    "tags": ["label", "form", "accessibility", "text"],
+    "variants": [
+      {
+        "name": "Basic Label",
+        "description": "Standard label for form inputs.",
+        "snippet": "import { Label } from '@visa/nova-react';\n\n<Label htmlFor=\"field-id\">Field Label</Label>"
+      },
+      {
+        "name": "Required Label",
+        "description": "Label indicating a required field.",
+        "snippet": "import { Label } from '@visa/nova-react';\n\n<Label htmlFor=\"required-field\" aria-required=\"true\">\n  Required Field *\n</Label>"
+      }
+    ]
+  },
+  "Typography": {
+    "category": "Content",
+    "description": "Text component with consistent styling and proper heading hierarchy.",
+    "tags": ["text", "heading", "paragraph", "title", "content"],
+    "variants": [
+      {
+        "name": "Headline 1",
+        "description": "Largest heading for page titles.",
+        "snippet": "import { Typography } from '@visa/nova-react';\n\n<Typography variant=\"headline-1\">\n  Main Page Title\n</Typography>"
+      },
+      {
+        "name": "Headline 2",
+        "description": "Section headings and major content divisions.",
+        "snippet": "import { Typography } from '@visa/nova-react';\n\n<Typography variant=\"headline-2\">\n  Section Title\n</Typography>"
+      },
+      {
+        "name": "Headline 3",
+        "description": "Subsection headings.",
+        "snippet": "import { Typography } from '@visa/nova-react';\n\n<Typography variant=\"headline-3\">\n  Subsection Title\n</Typography>"
+      },
+      {
+        "name": "Body Text",
+        "description": "Standard body text for paragraphs and content.",
+        "snippet": "import { Typography } from '@visa/nova-react';\n\n<Typography>\n  This is body text for regular content and paragraphs.\n</Typography>"
+      }
+    ]
+  },
+  "Checkbox": {
+    "category": "Form",
+    "description": "Binary selection control for multiple choice scenarios.",
+    "tags": ["checkbox", "select", "multiple", "choice", "form", "boolean"],
+    "variants": [
+      {
+        "name": "Basic Checkbox",
+        "description": "Standard checkbox for binary selections.",
+        "snippet": "import { Checkbox, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vAlignItems=\"center\" vGap={8}>\n  <Checkbox id=\"checkbox1\" />\n  <Label htmlFor=\"checkbox1\">Option 1</Label>\n</Utility>"
+      },
+      {
+        "name": "Checkbox Group",
+        "description": "Multiple checkboxes for multi-select scenarios.",
+        "snippet": "import { Checkbox, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={8}>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <Checkbox id=\"option1\" />\n    <Label htmlFor=\"option1\">Option 1</Label>\n  </Utility>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <Checkbox id=\"option2\" />\n    <Label htmlFor=\"option2\">Option 2</Label>\n  </Utility>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <Checkbox id=\"option3\" />\n    <Label htmlFor=\"option3\">Option 3</Label>\n  </Utility>\n</Utility>"
+      },
+      {
+        "name": "Remember Me Checkbox",
+        "description": "Common pattern for login forms.",
+        "snippet": "import { Checkbox, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vAlignItems=\"center\" vGap={8}>\n  <Checkbox id=\"remember\" />\n  <Label htmlFor=\"remember\">Remember me</Label>\n</Utility>"
+      }
+    ]
+  },
+  "RadioButton": {
+    "category": "Form",
+    "description": "Single selection control for mutually exclusive options.",
+    "tags": ["radio", "select", "single", "choice", "option", "form"],
+    "variants": [
+      {
+        "name": "Radio Group",
+        "description": "Group of radio buttons for single selection.",
+        "snippet": "import { RadioButton, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={8}>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <RadioButton id=\"option1\" name=\"choice\" value=\"1\" />\n    <Label htmlFor=\"option1\">Option 1</Label>\n  </Utility>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <RadioButton id=\"option2\" name=\"choice\" value=\"2\" />\n    <Label htmlFor=\"option2\">Option 2</Label>\n  </Utility>\n  <Utility vFlex vAlignItems=\"center\" vGap={8}>\n    <RadioButton id=\"option3\" name=\"choice\" value=\"3\" />\n    <Label htmlFor=\"option3\">Option 3</Label>\n  </Utility>\n</Utility>"
+      }
+    ]
+  },
+  "Select": {
+    "category": "Form",
+    "description": "Dropdown selection component for choosing from predefined options.",
+    "tags": ["select", "dropdown", "option", "choice", "menu"],
+    "variants": [
+      {
+        "name": "Basic Select",
+        "description": "Standard dropdown selection.",
+        "snippet": "import { Select, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"country\">Country</Label>\n  <Select id=\"country\">\n    <option value=\"us\">United States</option>\n    <option value=\"ca\">Canada</option>\n    <option value=\"uk\">United Kingdom</option>\n  </Select>\n</Utility>"
+      }
+    ]
+  },
+  "TextArea": {
+    "category": "Form",
+    "description": "Multi-line text input for longer content entry.",
+    "tags": ["textarea", "multiline", "text", "form", "comment", "description"],
+    "variants": [
+      {
+        "name": "Basic TextArea",
+        "description": "Standard multi-line text input.",
+        "snippet": "import { TextArea, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"message\">Message</Label>\n  <TextArea id=\"message\" rows={4} placeholder=\"Enter your message...\" />\n</Utility>"
+      }
+    ]
+  },
+  "ContentCard": {
+    "category": "Layout",
+    "description": "Card container for organizing related content with consistent styling.",
+    "tags": ["card", "container", "content", "section", "panel"],
+    "variants": [
+      {
+        "name": "Basic Card",
+        "description": "Simple card container for content grouping.",
+        "snippet": "import { ContentCard, ContentCardBody, ContentCardTitle } from '@visa/nova-react';\n\n<ContentCard>\n  <ContentCardTitle variant=\"headline-3\">\n    Card Title\n  </ContentCardTitle>\n  <ContentCardBody>\n    Card content goes here...\n  </ContentCardBody>\n</ContentCard>"
+      },
+      {
+        "name": "Card with Actions",
+        "description": "Card with action buttons in the footer.",
+        "snippet": "import { ContentCard, ContentCardBody, ContentCardTitle, Button, Utility } from '@visa/nova-react';\n\n<ContentCard>\n  <ContentCardTitle variant=\"headline-3\">\n    Product Card\n  </ContentCardTitle>\n  <ContentCardBody>\n    Product description and details...\n  </ContentCardBody>\n  <Utility vFlex vGap={12} vPaddingTop={16}>\n    <Button>Add to Cart</Button>\n    <Button className=\"v-button--secondary\">Learn More</Button>\n  </Utility>\n</ContentCard>"
+      }
+    ]
+  },
+  "Link": {
+    "category": "Navigation",
+    "description": "Navigation link component with consistent styling and accessibility.",
+    "tags": ["link", "navigation", "url", "anchor", "navigate"],
+    "variants": [
+      {
+        "name": "Basic Link",
+        "description": "Standard navigation link.",
+        "snippet": "import { Link } from '@visa/nova-react';\n\n<Link href=\"/dashboard\">\n  Go to Dashboard\n</Link>"
+      },
+      {
+        "name": "External Link",
+        "description": "Link to external websites.",
+        "snippet": "import { Link } from '@visa/nova-react';\n\n<Link href=\"https://example.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n  External Link\n</Link>"
+      },
+      {
+        "name": "Button-styled Link",
+        "description": "Link styled as a button.",
+        "snippet": "import { Link } from '@visa/nova-react';\n\n<Link href=\"/signup\" className=\"v-button\">\n  Sign Up\n</Link>"
+      }
+    ]
+  },
+  "Utility": {
+    "category": "Layout",
+    "description": "Flexible utility component for layout, spacing, and alignment without custom CSS.",
+    "tags": ["utility", "layout", "flex", "spacing", "alignment", "helper"],
+    "variants": [
+      {
+        "name": "Flex Container",
+        "description": "Flexible layout container with gap and alignment.",
+        "snippet": "import { Utility, Button } from '@visa/nova-react';\n\n<Utility vFlex vGap={16} vAlignItems=\"center\">\n  <Button>Action 1</Button>\n  <Button className=\"v-button--secondary\">Action 2</Button>\n</Utility>"
+      },
+      {
+        "name": "Vertical Stack",
+        "description": "Vertical layout with consistent spacing.",
+        "snippet": "import { Utility, Typography } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={12}>\n  <Typography variant=\"headline-3\">Title</Typography>\n  <Typography>Description text here...</Typography>\n  <Typography>More content...</Typography>\n</Utility>"
+      }
+    ]
+  },
+  "Alert": {
+    "category": "Feedback",
+    "description": "Alert component for displaying important messages and notifications.",
+    "tags": [
+      "alert",
+      "notification",
+      "message",
+      "warning",
+      "error",
+      "success",
+      "info"
+    ],
+    "variants": [
+      {
+        "name": "Success Alert",
+        "description": "Success message for positive feedback.",
+        "snippet": "import { Alert } from '@visa/nova-react';\n\n<Alert variant=\"success\">\n  Your changes have been saved successfully!\n</Alert>"
+      },
+      {
+        "name": "Error Alert",
+        "description": "Error message for problems or failures.",
+        "snippet": "import { Alert } from '@visa/nova-react';\n\n<Alert variant=\"error\">\n  Please fix the errors below and try again.\n</Alert>"
+      },
+      {
+        "name": "Warning Alert",
+        "description": "Warning message for important notices.",
+        "snippet": "import { Alert } from '@visa/nova-react';\n\n<Alert variant=\"warning\">\n  This action cannot be undone. Please proceed with caution.\n</Alert>"
+      },
+      {
+        "name": "Info Alert",
+        "description": "Informational message for general notices.",
+        "snippet": "import { Alert } from '@visa/nova-react';\n\n<Alert variant=\"info\">\n  Your session will expire in 5 minutes.\n</Alert>"
+      }
+    ]
+  },
+  "Badge": {
+    "category": "Display",
+    "description": "Small status indicator or label component for highlighting information.",
+    "tags": ["badge", "status", "indicator", "label", "count", "notification"],
+    "variants": [
+      {
+        "name": "Status Badge",
+        "description": "Badge indicating status or state.",
+        "snippet": "import { Badge } from '@visa/nova-react';\n\n<Badge variant=\"success\">Active</Badge>"
+      },
+      {
+        "name": "Count Badge",
+        "description": "Badge showing numerical values or counts.",
+        "snippet": "import { Badge } from '@visa/nova-react';\n\n<Badge variant=\"primary\">12</Badge>"
+      },
+      {
+        "name": "Notification Badge",
+        "description": "Badge for notifications and alerts.",
+        "snippet": "import { Badge } from '@visa/nova-react';\n\n<Badge variant=\"error\">New</Badge>"
+      }
+    ]
+  },
+  "Avatar": {
+    "category": "Display",
+    "description": "Avatar component for displaying user profile images or initials.",
+    "tags": ["avatar", "profile", "user", "image", "initials"],
+    "variants": [
+      {
+        "name": "Image Avatar",
+        "description": "Avatar displaying a user's profile image.",
+        "snippet": "import { Avatar } from '@visa/nova-react';\n\n<Avatar src=\"/user-avatar.jpg\" alt=\"User Name\" />"
+      },
+      {
+        "name": "Initials Avatar",
+        "description": "Avatar showing user initials when no image is available.",
+        "snippet": "import { Avatar } from '@visa/nova-react';\n\n<Avatar>JD</Avatar>"
+      },
+      {
+        "name": "Size Variants",
+        "description": "Avatar in different sizes.",
+        "snippet": "import { Avatar, Utility } from '@visa/nova-react';\n\n<Utility vFlex vGap={12} vAlignItems=\"center\">\n  <Avatar size=\"small\">SM</Avatar>\n  <Avatar size=\"medium\">MD</Avatar>\n  <Avatar size=\"large\">LG</Avatar>\n</Utility>"
+      }
+    ]
+  },
+  "Modal": {
+    "category": "Overlay",
+    "description": "Modal dialog component for displaying content over the main interface.",
+    "tags": ["modal", "dialog", "popup", "overlay", "lightbox"],
+    "variants": [
+      {
+        "name": "Basic Modal",
+        "description": "Standard modal dialog with header and content.",
+        "snippet": "import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from '@visa/nova-react';\n\n<Modal isOpen={isOpen} onClose={onClose}>\n  <ModalHeader>\n    Modal Title\n  </ModalHeader>\n  <ModalBody>\n    Modal content goes here...\n  </ModalBody>\n  <ModalFooter>\n    <Button onClick={onClose} className=\"v-button--secondary\">Cancel</Button>\n    <Button onClick={onConfirm}>Confirm</Button>\n  </ModalFooter>\n</Modal>"
+      },
+      {
+        "name": "Confirmation Modal",
+        "description": "Modal for confirming destructive actions.",
+        "snippet": "import { Modal, ModalHeader, ModalBody, ModalFooter, Button, Typography } from '@visa/nova-react';\n\n<Modal isOpen={isOpen} onClose={onClose}>\n  <ModalHeader>\n    Confirm Delete\n  </ModalHeader>\n  <ModalBody>\n    <Typography>\n      Are you sure you want to delete this item? This action cannot be undone.\n    </Typography>\n  </ModalBody>\n  <ModalFooter>\n    <Button onClick={onClose} className=\"v-button--secondary\">Cancel</Button>\n    <Button onClick={onDelete} className=\"v-button--destructive\">Delete</Button>\n  </ModalFooter>\n</Modal>"
+      }
+    ]
+  },
+  "Tooltip": {
+    "category": "Overlay",
+    "description": "Tooltip component for providing additional context on hover or focus.",
+    "tags": ["tooltip", "hint", "help", "context", "overlay"],
+    "variants": [
+      {
+        "name": "Basic Tooltip",
+        "description": "Simple tooltip with helpful information.",
+        "snippet": "import { Tooltip, Button } from '@visa/nova-react';\n\n<Tooltip content=\"This button performs an action\">\n  <Button>Hover me</Button>\n</Tooltip>"
+      }
+    ]
+  },
+  "Accordion": {
+    "category": "Layout",
+    "description": "Accordion component for collapsible content sections.",
+    "tags": ["accordion", "collapsible", "expandable", "toggle", "sections"],
+    "variants": [
+      {
+        "name": "Basic Accordion",
+        "description": "Standard accordion with collapsible sections.",
+        "snippet": "import { Accordion, AccordionItem, AccordionHeader, AccordionBody } from '@visa/nova-react';\n\n<Accordion>\n  <AccordionItem>\n    <AccordionHeader>\n      Section 1 Title\n    </AccordionHeader>\n    <AccordionBody>\n      Content for section 1...\n    </AccordionBody>\n  </AccordionItem>\n  <AccordionItem>\n    <AccordionHeader>\n      Section 2 Title\n    </AccordionHeader>\n    <AccordionBody>\n      Content for section 2...\n    </AccordionBody>\n  </AccordionItem>\n</Accordion>"
+      }
+    ]
+  },
+  "Tabs": {
+    "category": "Navigation",
+    "description": "Tab component for organizing content into switchable sections.",
+    "tags": ["tabs", "navigation", "sections", "panels", "switch"],
+    "variants": [
+      {
+        "name": "Basic Tabs",
+        "description": "Standard tabbed interface.",
+        "snippet": "import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@visa/nova-react';\n\n<Tabs>\n  <TabList>\n    <Tab>Tab 1</Tab>\n    <Tab>Tab 2</Tab>\n    <Tab>Tab 3</Tab>\n  </TabList>\n  <TabPanels>\n    <TabPanel>\n      Content for tab 1...\n    </TabPanel>\n    <TabPanel>\n      Content for tab 2...\n    </TabPanel>\n    <TabPanel>\n      Content for tab 3...\n    </TabPanel>\n  </TabPanels>\n</Tabs>"
+      }
+    ]
+  },
+  "Table": {
+    "category": "Data",
+    "description": "Table component for displaying structured data in rows and columns.",
+    "tags": ["table", "data", "grid", "rows", "columns", "structured"],
+    "variants": [
+      {
+        "name": "Basic Table",
+        "description": "Standard data table with headers and rows.",
+        "snippet": "import { Table, TableHead, TableBody, TableRow, TableHeader, TableCell } from '@visa/nova-react';\n\n<Table>\n  <TableHead>\n    <TableRow>\n      <TableHeader>Name</TableHeader>\n      <TableHeader>Email</TableHeader>\n      <TableHeader>Role</TableHeader>\n    </TableRow>\n  </TableHead>\n  <TableBody>\n    <TableRow>\n      <TableCell>John Doe</TableCell>\n      <TableCell>john@example.com</TableCell>\n      <TableCell>Admin</TableCell>\n    </TableRow>\n    <TableRow>\n      <TableCell>Jane Smith</TableCell>\n      <TableCell>jane@example.com</TableCell>\n      <TableCell>User</TableCell>\n    </TableRow>\n  </TableBody>\n</Table>"
+      }
+    ]
+  },
+  "Breadcrumb": {
+    "category": "Navigation",
+    "description": "Breadcrumb navigation showing the current page's location in the site hierarchy.",
+    "tags": ["breadcrumb", "navigation", "hierarchy", "path", "location"],
+    "variants": [
+      {
+        "name": "Basic Breadcrumb",
+        "description": "Standard breadcrumb navigation.",
+        "snippet": "import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@visa/nova-react';\n\n<Breadcrumb>\n  <BreadcrumbItem>\n    <BreadcrumbLink href=\"/\">Home</BreadcrumbLink>\n  </BreadcrumbItem>\n  <BreadcrumbItem>\n    <BreadcrumbLink href=\"/products\">Products</BreadcrumbLink>\n  </BreadcrumbItem>\n  <BreadcrumbItem isCurrentPage>\n    Product Details\n  </BreadcrumbItem>\n</Breadcrumb>"
+      }
+    ]
+  },
+  "Pagination": {
+    "category": "Navigation",
+    "description": "Pagination component for navigating through multiple pages of content.",
+    "tags": [
+      "pagination",
+      "pages",
+      "navigation",
+      "next",
+      "previous",
+      "numbers"
+    ],
+    "variants": [
+      {
+        "name": "Basic Pagination",
+        "description": "Standard pagination with page numbers.",
+        "snippet": "import { Pagination, PaginationItem, PaginationLink } from '@visa/nova-react';\n\n<Pagination>\n  <PaginationItem>\n    <PaginationLink href=\"#\" aria-label=\"Previous page\">\n      Previous\n    </PaginationLink>\n  </PaginationItem>\n  <PaginationItem>\n    <PaginationLink href=\"#\">1</PaginationLink>\n  </PaginationItem>\n  <PaginationItem isActive>\n    <PaginationLink href=\"#\">2</PaginationLink>\n  </PaginationItem>\n  <PaginationItem>\n    <PaginationLink href=\"#\">3</PaginationLink>\n  </PaginationItem>\n  <PaginationItem>\n    <PaginationLink href=\"#\" aria-label=\"Next page\">\n      Next\n    </PaginationLink>\n  </PaginationItem>\n</Pagination>"
+      }
+    ]
+  },
+  "Spinner": {
+    "category": "Feedback",
+    "description": "Loading spinner component to indicate processing or loading states.",
+    "tags": ["spinner", "loading", "progress", "wait", "processing"],
+    "variants": [
+      {
+        "name": "Basic Spinner",
+        "description": "Standard loading spinner.",
+        "snippet": "import { Spinner } from '@visa/nova-react';\n\n<Spinner />"
+      },
+      {
+        "name": "Spinner with Text",
+        "description": "Loading spinner with descriptive text.",
+        "snippet": "import { Spinner, Typography, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vAlignItems=\"center\" vGap={8}>\n  <Spinner />\n  <Typography>Loading...</Typography>\n</Utility>"
+      }
+    ]
+  },
+  "ProgressBar": {
+    "category": "Feedback",
+    "description": "Progress bar component for showing completion progress.",
+    "tags": ["progress", "bar", "completion", "loading", "percentage"],
+    "variants": [
+      {
+        "name": "Basic Progress Bar",
+        "description": "Standard progress indicator.",
+        "snippet": "import { ProgressBar } from '@visa/nova-react';\n\n<ProgressBar value={75} max={100} />"
+      },
+      {
+        "name": "Progress Bar with Label",
+        "description": "Progress bar with percentage label.",
+        "snippet": "import { ProgressBar, Typography, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Typography>Upload Progress: 75%</Typography>\n  <ProgressBar value={75} max={100} />\n</Utility>"
+      }
+    ]
+  },
+  "Switch": {
+    "category": "Form",
+    "description": "Toggle switch component for binary on/off states.",
+    "tags": ["switch", "toggle", "boolean", "on", "off", "binary"],
+    "variants": [
+      {
+        "name": "Basic Switch",
+        "description": "Standard toggle switch.",
+        "snippet": "import { Switch, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vAlignItems=\"center\" vGap={8}>\n  <Switch id=\"notifications\" />\n  <Label htmlFor=\"notifications\">Enable Notifications</Label>\n</Utility>"
+      }
+    ]
+  },
+  "Slider": {
+    "category": "Form",
+    "description": "Slider component for selecting values from a range.",
+    "tags": ["slider", "range", "value", "numeric", "input"],
+    "variants": [
+      {
+        "name": "Basic Slider",
+        "description": "Standard range slider.",
+        "snippet": "import { Slider, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"volume\">Volume</Label>\n  <Slider id=\"volume\" min={0} max={100} defaultValue={50} />\n</Utility>"
+      }
+    ]
+  },
+  "DatePicker": {
+    "category": "Form",
+    "description": "Date picker component for selecting dates.",
+    "tags": ["date", "picker", "calendar", "input", "time"],
+    "variants": [
+      {
+        "name": "Basic Date Picker",
+        "description": "Standard date selection input.",
+        "snippet": "import { DatePicker, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"birthdate\">Birth Date</Label>\n  <DatePicker id=\"birthdate\" />\n</Utility>"
+      }
+    ]
+  },
+  "FileUpload": {
+    "category": "Form",
+    "description": "File upload component for selecting and uploading files.",
+    "tags": ["file", "upload", "attach", "browse", "input"],
+    "variants": [
+      {
+        "name": "Basic File Upload",
+        "description": "Standard file selection input.",
+        "snippet": "import { FileUpload, Label, Utility } from '@visa/nova-react';\n\n<Utility vFlex vFlexCol vGap={4}>\n  <Label htmlFor=\"file\">Upload File</Label>\n  <FileUpload id=\"file\" accept=\".pdf,.doc,.docx\" />\n</Utility>"
+      },
+      {
+        "name": "Drag and Drop Upload",
+        "description": "File upload with drag and drop functionality.",
+        "snippet": "import { FileUpload, Typography, Utility } from '@visa/nova-react';\n\n<FileUpload dragAndDrop>\n  <Utility vFlex vFlexCol vAlignItems=\"center\" vGap={8}>\n    <Typography>Drag and drop files here</Typography>\n    <Typography variant=\"caption\">or click to browse</Typography>\n  </Utility>\n</FileUpload>"
+      }
+    ]
+  },
+  "Menu": {
+    "category": "Navigation",
+    "description": "Menu component for navigation and action lists.",
+    "tags": ["menu", "navigation", "dropdown", "list", "actions"],
+    "variants": [
+      {
+        "name": "Basic Menu",
+        "description": "Standard navigation menu.",
+        "snippet": "import { Menu, MenuItem, MenuButton } from '@visa/nova-react';\n\n<Menu>\n  <MenuButton>Menu</MenuButton>\n  <MenuList>\n    <MenuItem>Profile</MenuItem>\n    <MenuItem>Settings</MenuItem>\n    <MenuItem>Logout</MenuItem>\n  </MenuList>\n</Menu>"
+      },
+      {
+        "name": "Context Menu",
+        "description": "Right-click context menu.",
+        "snippet": "import { Menu, MenuItem, MenuList } from '@visa/nova-react';\n\n<Menu trigger=\"contextmenu\">\n  <MenuList>\n    <MenuItem>Copy</MenuItem>\n    <MenuItem>Paste</MenuItem>\n    <MenuItem>Delete</MenuItem>\n  </MenuList>\n</Menu>"
+      }
+    ]
+  },
+  "Popover": {
+    "category": "Overlay",
+    "description": "Popover component for displaying content in a floating container.",
+    "tags": ["popover", "popup", "overlay", "content", "floating"],
+    "variants": [
+      {
+        "name": "Basic Popover",
+        "description": "Standard popover with content.",
+        "snippet": "import { Popover, PopoverTrigger, PopoverContent, Button } from '@visa/nova-react';\n\n<Popover>\n  <PopoverTrigger>\n    <Button>Open Popover</Button>\n  </PopoverTrigger>\n  <PopoverContent>\n    <div>Popover content goes here...</div>\n  </PopoverContent>\n</Popover>"
+      }
+    ]
+  },
+  "Drawer": {
+    "category": "Overlay",
+    "description": "Slide-out drawer component for side navigation or content.",
+    "tags": ["drawer", "sidebar", "slide", "navigation", "panel"],
+    "variants": [
+      {
+        "name": "Side Drawer",
+        "description": "Drawer sliding from the side.",
+        "snippet": "import { Drawer, DrawerOverlay, DrawerContent, DrawerHeader, DrawerBody } from '@visa/nova-react';\n\n<Drawer isOpen={isOpen} placement=\"left\" onClose={onClose}>\n  <DrawerOverlay />\n  <DrawerContent>\n    <DrawerHeader>\n      Navigation\n    </DrawerHeader>\n    <DrawerBody>\n      Drawer content...\n    </DrawerBody>\n  </DrawerContent>\n</Drawer>"
+      }
+    ]
+  },
+  "Divider": {
+    "category": "Layout",
+    "description": "Divider component for visually separating content sections.",
+    "tags": ["divider", "separator", "line", "section", "break"],
+    "variants": [
+      {
+        "name": "Horizontal Divider",
+        "description": "Horizontal line separator.",
+        "snippet": "import { Divider } from '@visa/nova-react';\n\n<Divider />"
+      },
+      {
+        "name": "Vertical Divider",
+        "description": "Vertical line separator.",
+        "snippet": "import { Divider } from '@visa/nova-react';\n\n<Divider orientation=\"vertical\" />"
+      },
+      {
+        "name": "Divider with Text",
+        "description": "Divider with text in the middle.",
+        "snippet": "import { Divider } from '@visa/nova-react';\n\n<Divider>\n  OR\n</Divider>"
+      }
+    ]
+  },
+  "Grid": {
+    "category": "Layout",
+    "description": "Grid layout component for organizing content in rows and columns.",
+    "tags": ["grid", "layout", "columns", "rows", "responsive"],
+    "variants": [
+      {
+        "name": "Basic Grid",
+        "description": "Simple grid layout.",
+        "snippet": "import { Grid, GridItem } from '@visa/nova-react';\n\n<Grid templateColumns=\"repeat(3, 1fr)\" gap={6}>\n  <GridItem>Item 1</GridItem>\n  <GridItem>Item 2</GridItem>\n  <GridItem>Item 3</GridItem>\n  <GridItem>Item 4</GridItem>\n  <GridItem>Item 5</GridItem>\n  <GridItem>Item 6</GridItem>\n</Grid>"
+      },
+      {
+        "name": "Responsive Grid",
+        "description": "Grid that adapts to screen size.",
+        "snippet": "import { Grid, GridItem } from '@visa/nova-react';\n\n<Grid templateColumns={{base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)'}} gap={6}>\n  <GridItem>Item 1</GridItem>\n  <GridItem>Item 2</GridItem>\n  <GridItem>Item 3</GridItem>\n</Grid>"
+      }
+    ]
+  },
+  "Stack": {
+    "category": "Layout",
+    "description": "Stack component for arranging elements with consistent spacing.",
+    "tags": ["stack", "layout", "spacing", "vertical", "horizontal"],
+    "variants": [
+      {
+        "name": "Vertical Stack",
+        "description": "Vertical arrangement with spacing.",
+        "snippet": "import { Stack, Typography } from '@visa/nova-react';\n\n<Stack spacing={4}>\n  <Typography variant=\"headline-3\">Title</Typography>\n  <Typography>First paragraph</Typography>\n  <Typography>Second paragraph</Typography>\n</Stack>"
+      },
+      {
+        "name": "Horizontal Stack",
+        "description": "Horizontal arrangement with spacing.",
+        "snippet": "import { Stack, Button } from '@visa/nova-react';\n\n<Stack direction=\"horizontal\" spacing={3}>\n  <Button>Save</Button>\n  <Button className=\"v-button--secondary\">Cancel</Button>\n  <Button className=\"v-button--destructive\">Delete</Button>\n</Stack>"
+      }
+    ]
+  },
+  "Container": {
+    "category": "Layout",
+    "description": "Container component for centering and constraining content width.",
+    "tags": ["container", "layout", "center", "width", "wrapper"],
+    "variants": [
+      {
+        "name": "Basic Container",
+        "description": "Standard content container.",
+        "snippet": "import { Container, Typography } from '@visa/nova-react';\n\n<Container>\n  <Typography variant=\"headline-2\">Page Content</Typography>\n  <Typography>This content is contained within a max-width container.</Typography>\n</Container>"
+      },
+      {
+        "name": "Fluid Container",
+        "description": "Full-width container.",
+        "snippet": "import { Container, Typography } from '@visa/nova-react';\n\n<Container fluid>\n  <Typography>This content spans the full width.</Typography>\n</Container>"
+      }
+    ]
+  },
+  "Image": {
+    "category": "Media",
+    "description": "Image component with responsive behavior and accessibility features.",
+    "tags": ["image", "img", "photo", "responsive", "media"],
+    "variants": [
+      {
+        "name": "Basic Image",
+        "description": "Standard responsive image.",
+        "snippet": "import { Image } from '@visa/nova-react';\n\n<Image src=\"/image.jpg\" alt=\"Description\" />"
+      },
+      {
+        "name": "Image with Placeholder",
+        "description": "Image with loading placeholder.",
+        "snippet": "import { Image } from '@visa/nova-react';\n\n<Image \n  src=\"/image.jpg\" \n  alt=\"Description\" \n  placeholder=\"/placeholder.jpg\"\n  loading=\"lazy\"\n/>"
+      }
+    ]
+  },
+  "Icon": {
+    "category": "Display",
+    "description": "Icon component for displaying SVG icons from the Nova icon library.",
+    "tags": ["icon", "svg", "symbol", "graphic", "visual"],
+    "variants": [
+      {
+        "name": "Basic Icon",
+        "description": "Standard icon display.",
+        "snippet": "import { GenericHomeTiny } from '@visa/nova-icons-react';\n\n<GenericHomeTiny />"
+      },
+      {
+        "name": "Icon with Text",
+        "description": "Icon paired with text.",
+        "snippet": "import { GenericHomeTiny } from '@visa/nova-icons-react';\nimport { Typography, Utility } from '@visa/nova-react';\n\n<Utility vFlex vAlignItems=\"center\" vGap={8}>\n  <GenericHomeTiny />\n  <Typography>Home</Typography>\n</Utility>"
+      }
+    ]
+  },
+  "Toast": {
+    "category": "Feedback",
+    "description": "Toast notification component for temporary messages.",
+    "tags": ["toast", "notification", "message", "alert", "temporary"],
+    "variants": [
+      {
+        "name": "Success Toast",
+        "description": "Success notification toast.",
+        "snippet": "import { Toast } from '@visa/nova-react';\n\n<Toast variant=\"success\" title=\"Success\">\n  Your changes have been saved!\n</Toast>"
+      },
+      {
+        "name": "Error Toast",
+        "description": "Error notification toast.",
+        "snippet": "import { Toast } from '@visa/nova-react';\n\n<Toast variant=\"error\" title=\"Error\">\n  Something went wrong. Please try again.\n</Toast>"
+      }
+    ]
+  },
+  "Skeleton": {
+    "category": "Feedback",
+    "description": "Skeleton loading component for placeholder content while loading.",
+    "tags": ["skeleton", "loading", "placeholder", "shimmer", "content"],
+    "variants": [
+      {
+        "name": "Text Skeleton",
+        "description": "Skeleton for text content.",
+        "snippet": "import { Skeleton, Stack } from '@visa/nova-react';\n\n<Stack spacing={3}>\n  <Skeleton height=\"20px\" />\n  <Skeleton height=\"20px\" width=\"80%\" />\n  <Skeleton height=\"20px\" width=\"60%\" />\n</Stack>"
+      },
+      {
+        "name": "Card Skeleton",
+        "description": "Skeleton for card-like content.",
+        "snippet": "import { Skeleton, Stack } from '@visa/nova-react';\n\n<Stack spacing={3}>\n  <Skeleton height=\"200px\" />\n  <Skeleton height=\"20px\" />\n  <Skeleton height=\"16px\" width=\"70%\" />\n</Stack>"
+      }
+    ]
+  },
+  "Tag": {
+    "category": "Display",
+    "description": "Tag component for labeling and categorizing content.",
+    "tags": ["tag", "label", "category", "chip", "badge"],
+    "variants": [
+      {
+        "name": "Basic Tag",
+        "description": "Standard content tag.",
+        "snippet": "import { Tag } from '@visa/nova-react';\n\n<Tag>React</Tag>"
+      },
+      {
+        "name": "Removable Tag",
+        "description": "Tag with remove functionality.",
+        "snippet": "import { Tag, TagCloseButton } from '@visa/nova-react';\n\n<Tag>\n  JavaScript\n  <TagCloseButton />\n</Tag>"
+      },
+      {
+        "name": "Tag Group",
+        "description": "Multiple tags grouped together.",
+        "snippet": "import { Tag, Stack } from '@visa/nova-react';\n\n<Stack direction=\"horizontal\" spacing={2}>\n  <Tag>React</Tag>\n  <Tag>TypeScript</Tag>\n  <Tag>Node.js</Tag>\n</Stack>"
+      }
+    ]
+  },
+  "Steps": {
+    "category": "Navigation",
+    "description": "Step indicator component for multi-step processes.",
+    "tags": ["steps", "stepper", "process", "wizard", "progress"],
+    "variants": [
+      {
+        "name": "Basic Steps",
+        "description": "Standard step indicator.",
+        "snippet": "import { Steps, Step } from '@visa/nova-react';\n\n<Steps activeStep={1}>\n  <Step title=\"Personal Info\" />\n  <Step title=\"Account Details\" />\n  <Step title=\"Confirmation\" />\n</Steps>"
+      }
+    ]
+  },
+  "SearchInput": {
+    "category": "Form",
+    "description": "Specialized search input component with search functionality.",
+    "tags": ["search", "input", "find", "filter", "query"],
+    "variants": [
+      {
+        "name": "Basic Search",
+        "description": "Standard search input.",
+        "snippet": "import { SearchInput } from '@visa/nova-react';\nimport { VisaSearchTiny } from '@visa/nova-icons-react';\n\n<SearchInput \n  placeholder=\"Search...\" \n  leftIcon={<VisaSearchTiny />}\n/>"
+      },
+      {
+        "name": "Search with Results",
+        "description": "Search input with dropdown results.",
+        "snippet": "import { SearchInput, SearchResults, SearchItem } from '@visa/nova-react';\n\n<SearchInput placeholder=\"Search products...\">\n  <SearchResults>\n    <SearchItem>Product 1</SearchItem>\n    <SearchItem>Product 2</SearchItem>\n    <SearchItem>Product 3</SearchItem>\n  </SearchResults>\n</SearchInput>"
+      }
+    ]
+  },
+  "NumberInput": {
+    "category": "Form",
+    "description": "Specialized number input component with increment/decrement controls.",
+    "tags": ["number", "input", "numeric", "stepper", "quantity"],
+    "variants": [
+      {
+        "name": "Basic Number Input",
+        "description": "Standard number input with controls.",
+        "snippet": "import { NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper } from '@visa/nova-react';\n\n<NumberInput defaultValue={1} min={0} max={10}>\n  <NumberInputField />\n  <NumberInputStepper>\n    <NumberIncrementStepper />\n    <NumberDecrementStepper />\n  </NumberInputStepper>\n</NumberInput>"
+      }
+    ]
+  },
+  "FormControl": {
+    "category": "Form",
+    "description": "Form control wrapper for grouping labels, inputs, and help text.",
+    "tags": ["form", "control", "group", "label", "helper"],
+    "variants": [
+      {
+        "name": "Basic Form Control",
+        "description": "Standard form field grouping.",
+        "snippet": "import { FormControl, FormLabel, Input, FormHelperText } from '@visa/nova-react';\n\n<FormControl>\n  <FormLabel htmlFor=\"email\">Email Address</FormLabel>\n  <Input id=\"email\" type=\"email\" />\n  <FormHelperText>We'll never share your email.</FormHelperText>\n</FormControl>"
+      },
+      {
+        "name": "Required Form Control",
+        "description": "Form control for required fields.",
+        "snippet": "import { FormControl, FormLabel, Input, FormHelperText } from '@visa/nova-react';\n\n<FormControl isRequired>\n  <FormLabel htmlFor=\"name\">Full Name</FormLabel>\n  <Input id=\"name\" type=\"text\" />\n  <FormHelperText>Please enter your full name.</FormHelperText>\n</FormControl>"
+      },
+      {
+        "name": "Error Form Control",
+        "description": "Form control with error state.",
+        "snippet": "import { FormControl, FormLabel, Input, FormErrorMessage } from '@visa/nova-react';\n\n<FormControl isInvalid>\n  <FormLabel htmlFor=\"email\">Email Address</FormLabel>\n  <Input id=\"email\" type=\"email\" />\n  <FormErrorMessage>Please enter a valid email address.</FormErrorMessage>\n</FormControl>"
+      }
+    ]
+  }
+}
