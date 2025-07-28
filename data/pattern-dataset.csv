@@ -1,0 +1,66 @@
+query,components
+login form,"['Input', 'Checkbox', 'Button']"
+registration form,"['Input', 'Checkbox', 'Button', 'Select']"
+forgot password,"['Dialog', 'Input', 'Button']"
+user profile,"['Avatar', 'Input', 'Button']"
+settings page,"['Input', 'Switch', 'Select', 'Button']"
+notification center,"['Switch', 'Checkbox', 'Button']"
+billing page,"['Input', 'Select', 'Checkbox', 'Button']"
+admin dashboard,"['Content card', 'Table', 'Banner', 'Pagination', 'Progress']"
+analytics page,"['Content card', 'Progress', 'Table', 'Tabs']"
+data table,"['Table', 'Pagination']"
+contact form,"['Input', 'Input', 'Button']"
+survey form,"['Input', 'Radio', 'Checkbox', 'Button']"
+feedback form,"['Input', 'Button']"
+top navigation,['Horizontal navigation']
+side navigation,['Navigation drawer']
+breadcrumb navigation,['Breadcrumbs']
+footer with links,['Footer']
+search input,"['Input', 'Button']"
+multi-select filter,['Chips']
+toggle button group,['Toggle button']
+dropdown menu,['Dropdown menu']
+searchbox with autocomplete,['Combobox']
+color picker,['Color selector']
+date picker,['Date and time selectors']
+time selector,['Date and time selectors']
+file upload,"['Progress', 'Button']"
+image gallery,"['Avatar', 'Pagination']"
+product listing,"['Content card', 'Chips', 'Pagination']"
+shopping cart,"['Table', 'Button', 'Input']"
+checkout form,"['Input', 'Select', 'Checkbox', 'Button']"
+payment form,"['Input', 'Select', 'Button']"
+address form,"['Input', 'Select', 'Button']"
+profile settings,"['Input', 'Switch', 'Avatar', 'Button']"
+notification settings,"['Switch', 'Checkbox']"
+security settings,"['Input', 'Switch', 'Button']"
+dashboard cards,"['Content card', 'Badge', 'Progress']"
+status indicators,"['Badge', 'Banner']"
+loading states,['Progress']
+error messages,"['Banner', 'Dialog']"
+success notifications,"['Banner', 'Badge']"
+warning alerts,['Banner']
+confirmation dialog,"['Dialog', 'Button']"
+data filters,"['Chips', 'Select', 'Checkbox']"
+content tabs,['Tabs']
+accordion content,['Accordion']
+tooltip information,['Tooltip']
+anchor menu,['Anchor link menu']
+vertical tabs,['Tabs']
+modal panel,"['Panel', 'Button']"
+table with sorting,"['Table', 'Pagination']"
+sign in page,"['Input', 'Checkbox', 'Button']"
+sign up page,"['Input', 'Checkbox', 'Button', 'Select']"
+password reset form,"['Dialog', 'Input', 'Button']"
+user account page,"['Avatar', 'Input', 'Button']"
+change password form,"['Input', 'Button']"
+search results page,"['Content card', 'Pagination', 'Breadcrumbs']"
+404 error page,"['Banner', 'Button']"
+loading spinner,['Progress']
+multi step wizard form,"['Input', 'Button', 'Progress', 'Breadcrumbs']"
+product detail page,"['Content card', 'Tabs', 'Button']"
+modal confirmation,"['Dialog', 'Button']"
+toast notification,['Banner']
+filter sidebar,"['Navigation drawer', 'Chips', 'Checkbox', 'Button']"
+dropdown filter,"['Select', 'Checkbox', 'Button']"
+card grid,"['Content card', 'Pagination', 'Chips']"
