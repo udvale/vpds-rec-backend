@@ -1,0 +1,21 @@
+# cache
+data/pattern-dataset.csv
+# Byte‑compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtual‑envs (optional)
+.env/
+venv/
+.venv/
+.env
+
+# macOS / Windows cruft
+.DS_Store
+Thumbs.db
+
+# Editor / IDE folders
+.vscode/
+.idea/
+
