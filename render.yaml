@@ -1,8 +1,22 @@
-# render.yaml
 services:
+  # ──────────── 1. FastAPI web service ────────────
+  - type: web
+    name: vpds-backend
+    runtime: python           # <- ‘env’ was wrong — use runtime
+    plan: free                # or starter if you want always‑on
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+
+    envVars:                  # secrets live in the Render UI
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: USE_AI_MERGING
+        value: "true"
+
+  # ──────────── 2. keep‑alive cron job ────────────
   - type: cron
     name: stay-alive
-    env: web  
-    schedule: "*/10 * * * *"  # every 10 minutes
-    buildCommand: ""  # if you don't need a build step
-    startCommand: "curl -fsSL https://vpds-rec-backend.onrender.com/health"
+    runtime: image            # tiny container just for cURL
+    image: curlimages/curl:latest
+    schedule: "*/10 * * * *"  # every 10 min
+    command: ["curl", "-fsSL", "https://vpds-rec-backend.onrender.com/health"]
