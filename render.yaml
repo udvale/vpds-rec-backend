@@ -16,7 +16,6 @@ services:
   # ──────────── 2. keep‑alive cron job ────────────
   - type: cron
     name: stay-alive
-    runtime: image            # tiny container just for cURL
-    image: curlimages/curl:latest
     schedule: "*/10 * * * *"  # every 10 min
-    command: ["curl", "-fsSL", "https://vpds-rec-backend.onrender.com/health"]
+    command: |
+      curl -fsSL https://vpds-rec-backend.onrender.com/health
