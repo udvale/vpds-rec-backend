@@ -17,5 +17,4 @@ services:
   - type: cron
     name: stay-alive
     schedule: "*/10 * * * *"  # every 10 min
-    command: |
-      curl -fsSL https://vpds-rec-backend.onrender.com/health
+    startCommand: "curl -fsSL https://vpds-rec-backend.onrender.com/health"
