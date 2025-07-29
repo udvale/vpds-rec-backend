@@ -1,9 +1,9 @@
 # VPDS Component Suggestion API (Backend)
 
-This is the backend API for the **VPDS Component Suggestion Tool**, a take-home project that allows users to input a natural language description (like _"login form with email input and submit button"_) and receive JSX code snippets using **Visa's Product Design System (VPDS)** components.
+This is the backend API for the **VPDS Component Suggestion Tool**, that allows users to input a natural language description (like _"login form with email input and submit button"_) and receive TSX code snippets using **Visa's Product Design System (VPDS)** components.
 
 The backend interprets user intent and suggests appropriate component code by either:
-- Looking it up from a cached dataset (for known patterns)
+- Looking it up from a cached dataset (csv file) (for known patterns)
 - Or generating the result by combining known VPDS components
 
 ---
@@ -12,8 +12,8 @@ The backend interprets user intent and suggests appropriate component code by ei
 
 - **Python + FastAPI**: Chosen for its speed, simplicity, and modern async support. FastAPI allows clean routing, validation (via Pydantic), and scalability.
 - **CSV caching (`pattern-dataset.csv`)**: Allows storing previously seen query/code pairs so repeat queries return instantly.
-- **components.json**: A custom dataset mapping component names to metadata and usage examples. Acts as the source of truth for generating JSX.
-- **Optional OpenAI integration**: If `OPENAI_API_KEY` is provided, the API can fall back to AI-based generation (not required for core functionality).
+- **components.json**: A custom dataset mapping 33 component names to metadata and usage examples. Acts as the source of truth for generating JSX.
+- **Optional OpenAI integration**: If `OPENAI_API_KEY` is provided, the API can fall back to AI-based generation using gpt-4o-mini (not required for core functionality). Currently has limited tokenzation for query requests. 
 
 ---
 
@@ -21,7 +21,7 @@ The backend interprets user intent and suggests appropriate component code by ei
 
 - Accepts a plain English description (e.g., `"login form with remember me checkbox"`).
 - Checks if it already exists in a cache (CSV file).
-- If found, returns the JSX snippet and used VPDS components.
+- If found, returns the TSX snippet and used VPDS components.
 - If not found, attempts to match against the internal pattern rules (or optionally generate via OpenAI).
 - Updates the CSV cache automatically with new patterns and results.
 
@@ -40,18 +40,6 @@ vpds-rec-backend/
 ├── README.md # You are here!
 └── .env (optional) # Set OPENAI_API_KEY or USE_AI_MERGING here
 ```
----
-
-### Key Routes
-
-| Endpoint            | Description                                      |
-|---------------------|--------------------------------------------------|
-| `POST /api/suggest` | Main endpoint – takes query, returns JSX + info |
-| `GET /api/patterns` | View all saved patterns in cache                 |
-| `GET /api/components` | Lists all components in `components.json`     |
-| `GET /api/status`   | Shows environment + AI availability             |
-| `GET /`             | Basic health check                              |
-
 ---
 
 ## How to Run Locally
