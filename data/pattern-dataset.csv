@@ -1,0 +1,74 @@
+query,components,code
+
+login form,"[""Input"", ""Checkbox"", ""Button""]","import { Input, InputContainer, Label, Utility, Checkbox, Button } from '@visa/nova-react';
+import { useId } from 'react';
+
+export const LoginForm = () => {
+  const usernameId = useId();
+  const passwordId = useId();
+  const rememberMeId = useId();
+
+  return (
+    <Utility vFlex vFlexCol vGap={4}>
+      <Utility vFlex vGap={2}>
+        <Label htmlFor={usernameId}>Username (required)</Label>
+        <InputContainer>
+          <Input aria-required=""true"" id={usernameId} type=""text"" />
+        </InputContainer>
+      </Utility>
+      <Utility vFlex vGap={2}>
+        <Label htmlFor={passwordId}>Password (required)</Label>
+        <InputContainer>
+          <Input aria-required=""true"" id={passwordId} type=""password"" />
+        </InputContainer>
+      </Utility>
+      <Utility vAlignItems=""center"" vFlex vGap={2}>
+        <Checkbox id={rememberMeId} />
+        <Label htmlFor={rememberMeId}>Remember Me</Label>
+      </Utility>
+      <Button>Login</Button>
+    </Utility>
+  );
+};"
+user profile form,"[""Avatar"", ""Badge"", ""Input""]","import { Avatar, Input, InputContainer, Label, Utility, Badge } from '@visa/nova-react';
+import { VisaHistoryTiny } from '@visa/nova-icons-react';
+
+const BASE_URL = import.meta.env.BASE_URL;
+const user = 'Alex Miller';
+
+export const UserProfileForm = () => {
+  const id = 'input-default';
+
+  return (
+    <Utility vFlex vFlexCol vGap={4}>
+      <Avatar alt={user} tag=""img"" src={BASE_URL + '/alex-miller-stock.png'} />
+      <Badge badgeType=""subtle"">
+        <VisaHistoryTiny aria-label=""history"" /> Profile Information
+      </Badge>
+      <Label htmlFor={id}>Name (required)</Label>
+      <InputContainer>
+        <Input aria-required=""true"" id={id} type=""text"" />
+      </InputContainer>
+    </Utility>
+  );
+};"
+file upload,"[""Button"", ""Input"", ""Badge""]","import { Button, Input, InputContainer, Label, Utility, Badge } from '@visa/nova-react';
+import { VisaHistoryTiny } from '@visa/nova-icons-react';
+import { useId } from 'react';
+
+export const FileUpload = () => {
+  const id = useId();
+
+  return (
+    <Utility vFlex vFlexCol vGap={4}>
+      <Label htmlFor={id}>Upload File (required)</Label>
+      <InputContainer>
+        <Input aria-required=""true"" id={id} type=""file"" />
+      </InputContainer>
+      <Button>Upload</Button>
+      <Badge badgeType=""subtle"">
+        <VisaHistoryTiny aria-label=""history"" /> File upload history
+      </Badge>
+    </Utility>
+  );
+};"

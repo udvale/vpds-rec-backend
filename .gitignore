@@ -1,5 +1,3 @@
-# cache
-data/pattern-dataset.csv
 # Byte‑compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
