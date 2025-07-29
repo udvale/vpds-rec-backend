@@ -1,4 +1,5 @@
-cronjobs:
+cronJobs:
   - name: stay-alive               # can be any name
     schedule: "*/10 * * * *"       # every 10 min
     command: curl -fsS https://vpds-rec-backend.onrender.com/health
+    plan: free
