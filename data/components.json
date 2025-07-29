@@ -1,18 +1,26 @@
 [
   {
     "component": "Accordion",
-    "description": "A collapsible content container that allows users to show and hide sections of related content. Helps organize information and reduce visual clutter by displaying only relevant sections.",
+    "description": "A collapsible panel that lets users show or hide sections of content. Great for FAQs or settings pages where keeping everything visible would be overwhelming.",
     "category": "Layout",
-    "tags": ["collapsible", "expandable", "content", "organize", "disclosure", "section", "toggle", "vertical space"],
+    "tags": [
+      "accordion",
+      "collapsible",
+      "expand",
+      "hide",
+      "FAQ",
+      "settings",
+      "toggle"
+    ],
     "variants": [
       {
         "name": "Accordion",
-        "description": "Basic accordion component that can be expanded or collapsed to show/hide content sections",
+        "description": "Single standalone accordion section for showing or hiding one block of content.",
         "code": "import { Accordion, AccordionHeading, AccordionPanel, AccordionToggleIcon, Typography } from '@visa/nova-react';\n\nexport const CollapsedAccordion = () => {\n  return (\n    <Accordion>\n      <AccordionHeading buttonSize=\"large\" colorScheme=\"secondary\">\n        <AccordionToggleIcon />\n        Accordion title\n      </AccordionHeading>\n      <AccordionPanel>\n        <Typography>This is required text that describes the accordion section in more detail.</Typography>\n      </AccordionPanel>\n    </Accordion>\n  );\n};"
       },
       {
         "name": "Multi-select accordion group",
-        "description": "Multiple accordion components that can be independently expanded or collapsed, allowing users to view multiple sections simultaneously",
+        "description": "Stack of independent accordions where several sections may be open simultaneously; useful for long FAQ lists.",
         "code": "import {\n  Accordion,\n  AccordionHeading,\n  AccordionPanel,\n  AccordionToggleIcon,\n  Typography,\n  Utility,\n} from '@visa/nova-react';\n\nconst accordions = [\n  {\n    content: 'This is required text that describes the accordion section in more detail.',\n    header: 'Accordion title 1',\n  },\n  {\n    content: 'This is required text that describes the accordion section in more detail.',\n    header: 'Accordion title 2',\n  },\n  {\n    content: 'This is required text that describes the accordion section in more detail.',\n    header: 'Accordion title 3',\n  },\n];\n\n// TIP: Customize this ID, pass it as a prop, or auto-generate it with useId() from @react\nconst id = 'default-multi-select-accordion-group-example';\n\nexport const DefaultMultiSelectAccordionGroup = () => {\n  return (\n    <Utility vFlex vFlexCol vGap={6}>\n      {accordions.map((accordion, index) => (\n        <Accordion key={`${id}-${index}`}>\n          <AccordionHeading buttonSize=\"large\" colorScheme=\"secondary\">\n            <AccordionToggleIcon />\n            {accordion.header}\n          </AccordionHeading>\n          <AccordionPanel>\n            <Typography>{accordion.content}</Typography>\n          </AccordionPanel>\n        </Accordion>\n      ))}\n    </Utility>\n  );\n};"
       }
     ]
@@ -21,7 +29,17 @@
     "component": "Anchor link menu",
     "description": "A navigation component that provides quick access to different sections within a page or document. Allows users to jump to specific content areas efficiently.",
     "category": "Navigation",
-    "tags": ["navigation", "menu", "anchor", "jump", "section", "page navigation", "quick access", "internal links"],
+    "tags": [
+      "navigation",
+      "menu",
+      "anchor",
+      "jump",
+      "section",
+      "page navigation",
+      "quick access",
+      "internal links",
+      "table of contents"
+    ],
     "variants": [
       {
         "name": "Anchor link menu",
@@ -34,7 +52,17 @@
     "component": "Avatar",
     "description": "A visual representation of a user or entity, typically displayed as a circular image or initials. Used for user identification and personalization in interfaces.",
     "category": "Display",
-    "tags": ["user", "profile", "image", "initials", "identity", "person", "circular", "photo"],
+    "tags": [
+      "user",
+      "profile",
+      "image",
+      "initials",
+      "identity",
+      "person",
+      "circular",
+      "photo",
+      "profile picture"
+    ],
     "variants": [
       {
         "name": "Avatar with Image",
@@ -52,7 +80,16 @@
     "component": "Badge",
     "description": "A small status indicator that conveys information about an item's state, category, or properties. Used to highlight important information or indicate status changes.",
     "category": "Display",
-    "tags": ["status", "indicator", "label", "notification", "count", "state", "category", "highlight"],
+    "tags": [
+      "status",
+      "indicator",
+      "label",
+      "notification",
+      "count",
+      "state",
+      "category",
+      "highlight"
+    ],
     "variants": [
       {
         "name": "Subtle Badge",
@@ -60,7 +97,7 @@
         "code": "import { VisaHistoryTiny } from '@visa/nova-icons-react';\nimport { Badge } from '@visa/nova-react';\n\nexport const SubtleBadgeDefault = () => {\n  return (\n      <Badge badgeType=\"subtle\">\n        <VisaHistoryTiny aria-label=\"history\" /> Label\n      </Badge>\n  );\n};"
       },
       {
-        "name": "Postive Badge",
+        "name": "Positive Badge",
         "description": "A badge with positive styling to indicate successful states or positive information",
         "code": "import { VisaSuccessTiny } from '@visa/nova-icons-react';\nimport { Badge } from '@visa/nova-react';\n\nexport const PositiveBadgeDefault = () => {\n  return (\n      <Badge badgeType=\"stable\">\n        <VisaSuccessTiny aria-label=\"success\" /> Label\n      </Badge>\n  );\n};"
       },
@@ -75,8 +112,17 @@
     "component": "Banner",
     "description": "A prominent notification component that displays important messages, alerts, or announcements to users. Used for system-wide communications and status updates.",
     "category": "Feedback",
-    "tags": ["notification", "alert", "message", "announcement", "system message", "feedback", "status", "communication"],
-    
+    "tags": [
+      "notification",
+      "alert",
+      "message",
+      "announcement",
+      "system message",
+      "feedback",
+      "status",
+      "communication"
+    ],
+
     "variants": [
       {
         "name": "Informational banner",
@@ -104,8 +150,17 @@
     "component": "Breadcrumbs",
     "description": "A navigation aid that shows users their current location within a website or application hierarchy. Helps users understand their position and navigate back to previous levels.",
     "category": "Navigation",
-    "tags": ["navigation", "hierarchy", "path", "location", "trail", "secondary navigation", "page hierarchy", "breadcrumb trail"],
-    
+    "tags": [
+      "navigation",
+      "hierarchy",
+      "path",
+      "location",
+      "trail",
+      "secondary navigation",
+      "page hierarchy",
+      "breadcrumb trail"
+    ],
+
     "variants": [
       {
         "name": "Breadcrumbs with seperator",
@@ -118,8 +173,17 @@
     "component": "Button",
     "description": "An interactive element that triggers actions when clicked or activated. Essential for user interactions, form submissions, navigation, and executing functions within an interface.",
     "category": "Interactive",
-    "tags": ["action", "click", "interactive", "submit", "primary", "secondary", "call to action", "trigger"],
-    
+    "tags": [
+      "action",
+      "click",
+      "interactive",
+      "submit",
+      "primary",
+      "secondary",
+      "call to action",
+      "trigger"
+    ],
+
     "variants": [
       {
         "name": "Primary text buttons",
@@ -142,8 +206,17 @@
     "component": "Checkbox",
     "description": "An input control that allows users to select one or multiple options from a set. Useful for forms, settings, and multi-selection scenarios.",
     "category": "Forms",
-    "tags": ["form", "input", "selection", "multiple", "choice", "toggle", "boolean", "check"],
-    
+    "tags": [
+      "form",
+      "input",
+      "selection",
+      "multiple",
+      "choice",
+      "toggle",
+      "boolean",
+      "check"
+    ],
+
     "variants": [
       {
         "name": "Single Checkbox",
@@ -161,8 +234,17 @@
     "component": "Chips",
     "description": "Compact elements that represent input, attribute, or action. Used for tags, filters, selections, and categorization with an interactive, pill-like appearance.",
     "category": "Interactive",
-    "tags": ["filter", "tag", "selection", "compact", "category", "removable", "choice", "pill"],
-    
+    "tags": [
+      "filter",
+      "tag",
+      "selection",
+      "compact",
+      "category",
+      "removable",
+      "choice",
+      "pill"
+    ],
+
     "variants": [
       {
         "name": "Selection chip",
@@ -180,8 +262,18 @@
     "component": "Color selector",
     "description": "An input control that allows users to select colors using a color picker interface. Provides visual color selection with accessibility information and validation.",
     "category": "Forms",
-    "tags": ["color", "picker", "input", "visual", "selection", "rgb", "hex", "hsl", "accessibility"],
-    
+    "tags": [
+      "color",
+      "picker",
+      "input",
+      "visual",
+      "selection",
+      "rgb",
+      "hex",
+      "hsl",
+      "accessibility"
+    ],
+
     "variants": [
       {
         "name": "Color selector",
@@ -194,8 +286,17 @@
     "component": "Combobox",
     "description": "A combination of a text input and dropdown list that allows users to type and select from available options. Provides both search functionality and selection capabilities.",
     "category": "Forms",
-    "tags": ["dropdown", "autocomplete", "search", "selection", "input", "typeahead", "filter", "combo"],
-    
+    "tags": [
+      "dropdown",
+      "autocomplete",
+      "search",
+      "selection",
+      "input",
+      "typeahead",
+      "filter",
+      "combo"
+    ],
+
     "variants": [
       {
         "name": "Combobox",
@@ -208,8 +309,17 @@
     "component": "Content card",
     "description": "A contained unit of content that groups related information together. Used to display structured content like articles, products, or summaries in a card format.",
     "category": "Layout",
-    "tags": ["card", "content", "container", "structured", "summary", "article", "product", "grouped"],
-    
+    "tags": [
+      "card",
+      "content",
+      "container",
+      "structured",
+      "summary",
+      "article",
+      "product",
+      "grouped"
+    ],
+
     "variants": [
       {
         "name": "Content card",
@@ -222,8 +332,19 @@
     "component": "Date and time selectors",
     "description": "Input controls for selecting dates and times. Provides calendar interfaces and time pickers for scheduling, forms, and temporal data entry.",
     "category": "Forms",
-    "tags": ["date", "time", "calendar", "picker", "temporal", "schedule", "datetime", "range"],
-    
+    "tags": [
+      "date",
+      "time",
+      "calendar",
+      "picker",
+      "temporal",
+      "schedule",
+      "datetime",
+      "range",
+      "datepicker",
+      "timepicker"
+    ],
+
     "variants": [
       {
         "name": "Date selector",
@@ -246,8 +367,17 @@
     "component": "Dialog",
     "description": "A modal window that appears on top of the main content to focus user attention on specific tasks or information. Used for confirmations, forms, and important communications.",
     "category": "Overlay",
-    "tags": ["modal", "popup", "overlay", "dialog", "confirmation", "focus", "blocking", "window"],
-    
+    "tags": [
+      "modal",
+      "popup",
+      "overlay",
+      "dialog",
+      "confirmation",
+      "focus",
+      "blocking",
+      "window"
+    ],
+
     "variants": [
       {
         "name": "Dialog",
@@ -258,10 +388,19 @@
   },
   {
     "component": "Divider",
-     "description": "A visual separator that creates distinction between content sections or groups. Used to organize and structure content by creating visual breaks.",
+    "description": "A visual separator that creates distinction between content sections or groups. Used to organize and structure content by creating visual breaks.",
     "category": "Layout",
-    "tags": ["separator", "line", "visual break", "section", "organize", "structure", "border", "hr"],
-    
+    "tags": [
+      "separator",
+      "line",
+      "visual break",
+      "section",
+      "organize",
+      "structure",
+      "border",
+      "hr"
+    ],
+
     "variants": [
       {
         "name": "Divider",
@@ -274,8 +413,17 @@
     "component": "Dropdown menu",
     "description": "A contextual menu that appears when triggered, containing a list of actions or options. Used for secondary actions and space-efficient navigation.",
     "category": "Interactive",
-    "tags": ["menu", "contextual", "actions", "options", "popup", "trigger", "secondary actions", "list"],
-    
+    "tags": [
+      "menu",
+      "contextual",
+      "actions",
+      "options",
+      "popup",
+      "trigger",
+      "secondary actions",
+      "list"
+    ],
+
     "variants": [
       {
         "name": "Dropdown menu",
@@ -288,8 +436,17 @@
     "component": "Footer",
     "description": "The bottom section of a page or application that contains supplementary information, links, and legal content. Provides consistent site-wide navigation and information.",
     "category": "Layout",
-    "tags": ["footer", "bottom", "legal", "links", "copyright", "site info", "supplementary", "navigation"],
-    
+    "tags": [
+      "footer",
+      "bottom",
+      "legal",
+      "links",
+      "copyright",
+      "site info",
+      "supplementary",
+      "navigation"
+    ],
+
     "variants": [
       {
         "name": "Footer",
@@ -300,14 +457,23 @@
   },
   {
     "component": "Horizontal navigation",
-    "description": "A horizontal navigation bar that provides primary navigation links and user account access. Typically placed at the top of applications for main navigation.",
+    "description": "A horizontal navigation bar placed at the top of an application that provides primary links and account actions.",
     "category": "Navigation",
-    "tags": ["navigation", "horizontal", "nav bar", "primary navigation", "top navigation", "menu", "header nav", "main nav"],
-    
+    "tags": [
+      "navigation",
+      "horizontal",
+      "nav bar",
+      "primary navigation",
+      "top navigation",
+      "menu",
+      "header nav",
+      "main nav"
+    ],
+
     "variants": [
       {
         "name": "Horizontal navigation",
-         "description": "A comprehensive horizontal navigation bar with logo, main navigation links, search, notifications, and user account menu",
+        "description": "A comprehensive horizontal navigation bar with logo, main navigation links, search, notifications, and user account menu",
         "code": "import {\n  autoUpdate,\n  offset,\n  FloatingFocusManager,\n  useClick,\n  useFloating,\n  useInteractions,\n  useDismiss,\n} from '@floating-ui/react';\nimport {\n  VisaAccountLow,\n  VisaChevronDownTiny,\n  VisaChevronUpTiny,\n  VisaCloseLow,\n  VisaCloseTiny,\n  VisaMenuLow,\n  VisaNotificationsLow,\n  VisaSearchLow,\n} from '@visa/nova-icons-react';\nimport {\n  Avatar,\n  Badge,\n  Button,\n  Divider,\n  DropdownButton,\n  DropdownMenu,\n  Input,\n  InputContainer,\n  Link,\n  Listbox,\n  ListboxItem,\n  Nav,\n  NavAppName,\n  Surface,\n  Tab,\n  TabSuffix,\n  Tabs,\n  Typography,\n  Utility,\n  UtilityFragment,\n  VisaLogo,\n} from '@visa/nova-react';\nimport { CSSProperties, useEffect, useRef, useState } from 'react';\n\n// TIP: Customize this ID, pass it as a prop, or auto-generate it with useId() from @react\nconst id = 'default-horizontal-nav';\n\nconst accountSubItems = [\n  {\n    tabLabel: 'L2 label 1',\n    id: `${id}-account-sub-item-0`,\n    href: './horizontal-navigation',\n  },\n  {\n    tabLabel: 'L2 label 2',\n    id: `${id}-account-sub-item-1`,\n    href: './horizontal-navigation',\n  },\n];\n\nconst label3SubItems = [\n  {\n    tabLabel: 'L2 label 1',\n    id: `${id}-label-3-sub-item-0`,\n    href: './horizontal-navigation',\n  },\n  {\n    tabLabel: 'L2 label 2',\n    id: `${id}-label-3-sub-item-1`,\n    href: './horizontal-navigation',\n  },\n];\n\nexport const DefaultHorizontalNav = () => {\n  const searchInputRef = useRef<HTMLInputElement | null>();\n  const searchButtonRef = useRef<HTMLButtonElement | null>();\n\n  const [accountMenuOpen, setAccountMenuOpen] = useState(false);\n  const [mobileAccountMenuOpen, setMobileAccountMenuOpen] = useState(false);\n  const [mobileLabel3MenuOpen, setMobileLabel3MenuOpen] = useState(false);\n  const [expandSearch, setExpandSearch] = useState(false);\n  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);\n  const [label3Open, setLabel3Open] = useState(false);\n  const searchInitiallyActivated = useRef(false);\n\n  useEffect(() => {\n    if (expandSearch && searchInitiallyActivated.current) {\n      searchInputRef.current?.focus();\n    }\n    if (!expandSearch && searchInitiallyActivated.current) {\n      searchButtonRef.current?.focus();\n    }\n  }, [expandSearch]);\n  \n  // For dropdown menus in the horizontal nav, we use floating UI for\n  // -opening\n  // -positioning\n  // -dismissing\n\n  // floating-ui setup for the account dropdown\n  const {\n    context: accountFloatingContext,\n    floatingStyles: accountFloatingStyles,\n    refs: accountFloatingRefs,\n  } = useFloating({\n    middleware: [offset(2)],\n    open: accountMenuOpen,\n    onOpenChange: setAccountMenuOpen,\n    placement: 'bottom-end',\n    whileElementsMounted: autoUpdate,\n  });\n  const clickAccountRef = useClick(accountFloatingContext);\n  const dismissAccountMenu = useDismiss(accountFloatingContext);\n  const { getReferenceProps: getAccountReferenceProps, getFloatingProps: getAccountFloatingProps } = useInteractions([\n    clickAccountRef,\n    dismissAccountMenu,\n  ]);\n\n  // floating-ui setup for the label3 tab dropdown\n  const {\n    context: label3FloatingContext,\n    floatingStyles: label3FloatingStyles,\n    refs: label3FloatingRefs,\n  } = useFloating({\n    middleware: [offset(8)],\n    open: label3Open,\n    onOpenChange: setLabel3Open,\n    placement: 'bottom-start',\n    whileElementsMounted: autoUpdate,\n  });\n\n  const clickLabel3Ref = useClick(label3FloatingContext);\n  const dismissLabel3Menu = useDismiss(label3FloatingContext);\n  const { getReferenceProps: getLabel3ReferenceProps, getFloatingProps: getLabel3FloatingProps } = useInteractions([\n    clickLabel3Ref,\n    dismissLabel3Menu,\n  ]);\n\n  const onToggleMobileMenu = () => {\n    setMobileMenuOpen(!mobileMenuOpen);\n  };\n\n  return (\n    <div>\n      <Link skipLink href=\"#content\">\n        Skip to content\n      </Link>\n      <UtilityFragment vJustifyContent=\"between\">\n        <Nav id={id} orientation=\"horizontal\" tag=\"header\">\n          {!expandSearch ? (\n            <>\n              <UtilityFragment vContainerHide=\"desktop\">\n                <DropdownButton\n                  aria-controls={`${id}-mobile-menu`}\n                  aria-expanded={mobileMenuOpen ? 'true' : 'false'}\n                  aria-label=\"open menu\"\n                  aria-describedby={`${id}-mobile-menu-notifications-badge`}\n                  buttonSize=\"large\"\n                  colorScheme=\"tertiary\"\n                  iconButton\n                  id={`${id}-mobile-menu-button`}\n                  onClick={onToggleMobileMenu}\n                >\n                  {mobileMenuOpen ? (\n                    <VisaCloseTiny />\n                  ) : (\n                    <>\n                      <VisaMenuLow />\n                      <Badge\n                        id={`${id}-mobile-menu-notifications-badge`}\n                        aria-label=\"3 notifications\"\n                        badgeVariant=\"number\"\n                        tag=\"sup\"\n                      >\n                        3\n                      </Badge>\n                    </>\n                  )}\n                </DropdownButton>\n              </UtilityFragment>\n              <UtilityFragment vFlex vGap={16}>\n                <Link\n                  aria-label=\"Visa Application Name Home\"\n                  href=\"./horizontal-navigation\"\n                  id={`${id}-home-link`}\n                  noUnderline\n                  style={{ backgroundColor: 'transparent' }}\n                >\n                  <VisaLogo />\n                  <NavAppName>\n                    <Utility\n                      vContainerHide=\"xs\"\n                      element={<Typography variant=\"headline-3\">Application Name</Typography>}\n                    />\n                  </NavAppName>\n                </Link>\n              </UtilityFragment>\n              <UtilityFragment vFlex vJustifyContent=\"end\" vFlexGrow vMarginLeft=\"auto\" vContainerHide=\"mobile\">\n                <nav aria-label=\"Label for horizontal default example\">\n                  <UtilityFragment vGap={4}>\n                    <Tabs>\n                      <Tab>\n                        <Button\n                          buttonSize=\"large\"\n                          colorScheme=\"tertiary\"\n                          element={<a href=\"./horizontal-navigation\">L1 label 1</a>}\n                        />\n                      </Tab>\n                      <Tab>\n                        <Button\n                          buttonSize=\"large\"\n                          colorScheme=\"tertiary\"\n                          element={<a href=\"./horizontal-navigation\">L1 label 2</a>}\n                        />\n                      </Tab>\n                      <Tab>\n                        <DropdownButton\n                          aria-expanded={label3Open}\n                          aria-controls={label3Open ? `${id}-label-dropdown-menu` : undefined}\n                          id={`${id}-label-dropdown-button`}\n                          buttonSize=\"large\"\n                          colorScheme=\"tertiary\"\n                          ref={label3FloatingRefs.setReference}\n                          {...getLabel3ReferenceProps()}\n                        >\n                          L1 label 3<TabSuffix element={label3Open ? <VisaChevronUpTiny /> : <VisaChevronDownTiny />} />\n                        </DropdownButton>\n\n                        {label3Open && (\n                          <FloatingFocusManager\n                            context={label3FloatingContext}\n                            modal={false}\n                            initialFocus={-1}\n                            restoreFocus={true}\n                          >\n                            <DropdownMenu\n                              id={`${id}-label-dropdown-menu`}\n                              aria-hidden={!label3Open}\n                              style={\n                                {\n                                  inlineSize: '180px',\n                                  position: 'absolute',\n                                  ...label3FloatingStyles,\n                                  zIndex: 1,\n                                } as CSSProperties\n                              }\n                              ref={label3FloatingRefs.setFloating}\n                              {...getLabel3FloatingProps()}\n                            >\n                              <Listbox>\n                                {label3SubItems.map(label3SubItem => (\n                                  <li key={label3SubItem.id}>\n                                    <UtilityFragment vPaddingVertical={4} vPaddingHorizontal={8}>\n                                      <ListboxItem href={label3SubItem.href} tag=\"a\">\n                                        {label3SubItem.tabLabel}\n                                      </ListboxItem>\n                                    </UtilityFragment>\n                                  </li>\n                                ))}\n                              </Listbox>\n                            </DropdownMenu>\n                          </FloatingFocusManager>\n                        )}\n                      </Tab>\n                    </Tabs>\n                  </UtilityFragment>\n                </nav>\n              </UtilityFragment>\n              <Utility vFlex vGap={8} vMarginLeft={8}>\n                <Button\n                  aria-label=\"search site\"\n                  buttonSize=\"large\"\n                  ref={searchButtonRef}\n                  colorScheme=\"tertiary\"\n                  iconButton\n                  onClick={() => { setExpandSearch(true); searchInitiallyActivated.current = true; }}\n\n                >\n                  <VisaSearchLow />\n                </Button>\n                <UtilityFragment vContainerHide=\"mobile\">\n                  <Button\n                    aria-label=\"notifications\"\n                    aria-describedby={`${id}-notifications-badge`}\n                    buttonSize=\"large\"\n                    colorScheme=\"tertiary\"\n                    iconButton\n                  >\n                    <VisaNotificationsLow />\n\n                    <Badge id={`${id}-notifications-badge`} badgeVariant=\"number\" tag=\"sup\">\n                      3\n                    </Badge>\n                  </Button>\n                </UtilityFragment>\n                <UtilityFragment vContainerHide=\"mobile\">\n                  <Tab tag=\"div\">\n                    <DropdownButton\n                      aria-expanded={accountMenuOpen}\n                      aria-controls={accountMenuOpen ? `${id}-account-menu` : undefined}\n                      aria-label=\"Alex Miller\"\n                      buttonSize=\"large\"\n                      colorScheme=\"tertiary\"\n                      element={<Avatar tag=\"button\" />}\n                      ref={accountFloatingRefs.setReference}\n                      {...getAccountReferenceProps()}\n                    >\n                      <VisaAccountLow />\n                      <TabSuffix element={accountMenuOpen ? <VisaChevronUpTiny /> : <VisaChevronDownTiny />} />\n                    </DropdownButton>\n                    {accountMenuOpen && (\n                      <FloatingFocusManager\n                        context={accountFloatingContext}\n                        modal={false}\n                        initialFocus={-1}\n                        restoreFocus={true}\n                      >\n                        <DropdownMenu\n                          id={`${id}-account-menu`}\n                          aria-hidden={!accountMenuOpen}\n                          style={\n                            {\n                              inlineSize: '180px',\n                              position: 'absolute',\n                              ...accountFloatingStyles,\n                              zIndex: 1,\n                            } as CSSProperties\n                          }\n                          ref={accountFloatingRefs.setFloating}\n                          {...getAccountFloatingProps()}\n                        >\n                          <Listbox>\n                            {accountSubItems.map(accountSubItem => (\n                              <UtilityFragment key={accountSubItem.id}>\n                                <li>\n                                  <UtilityFragment vPaddingVertical={4} vPaddingHorizontal={8}>\n                                    <ListboxItem href={accountSubItem.href} tag=\"a\">\n                                      {accountSubItem.tabLabel}\n                                    </ListboxItem>\n                                  </UtilityFragment>\n                                </li>\n                              </UtilityFragment>\n                            ))}\n                          </Listbox>\n                        </DropdownMenu>\n                      </FloatingFocusManager>\n                    )}\n                  </Tab>\n                </UtilityFragment>\n              </Utility>\n            </>\n          ) : (\n            <UtilityFragment vFlex>\n              <Surface\n                style={\n                  {\n                    '--v-surface-background': 'var(--palette-default-surface-3)',\n                    '--v-surface-border-radius': 'var(--size-rounded-medium)',\n                    '--v-surface-padding-inline': 'var(--size-scalable-8)',\n                  } as CSSProperties\n                }\n              >\n                <InputContainer>\n                  <VisaSearchLow />\n                  <Input\n                    id={`${id}-search-field`}\n                    name={`${id}-search-field`}\n                    ref={searchInputRef}\n                    required\n                    type=\"search\"\n                    aria-label=\"Search\"\n                    placeholder=\"Search\"\n                  />\n                </InputContainer>\n                <Button\n                  aria-label=\"close search\"\n                  buttonSize=\"large\"\n                  colorScheme=\"tertiary\"\n                  iconButton\n                  onClick={() => setExpandSearch(false)}\n                >\n                  <VisaCloseLow />\n                </Button>\n              </Surface>\n            </UtilityFragment>\n          )}\n        </Nav>\n      </UtilityFragment>\n      <UtilityFragment vContainerHide=\"desktop\" vHide={!mobileMenuOpen}>\n        <Nav\n          aria-label=\"Label for horizontal default example\"\n          aria-hidden={!mobileMenuOpen}\n          id={`${id}-mobile-menu`}\n          orientation=\"vertical\"\n        >\n          <Tabs orientation=\"vertical\">\n            <Tab>\n              <Button\n                buttonSize=\"large\"\n                colorScheme=\"tertiary\"\n                element={<a href=\"./horizontal-navigation\">L1 label 1</a>}\n              />\n            </Tab>\n            <Tab>\n              <Button\n                buttonSize=\"large\"\n                colorScheme=\"tertiary\"\n                element={<a href=\"./horizontal-navigation\">L1 label 2</a>}\n              />\n            </Tab>\n            <Tab>\n              <Button\n                aria-expanded={mobileLabel3MenuOpen}\n                aria-controls={mobileLabel3MenuOpen ? `${id}-account-sub-menu` : 'undefined'}\n                id={`${id}-mobile-menu-label-dropdown-button`}\n                buttonSize=\"large\"\n                colorScheme=\"tertiary\"\n                onClick={() => setMobileLabel3MenuOpen(!mobileLabel3MenuOpen)}\n              >\n                L1 Label 3\n                <TabSuffix element={mobileLabel3MenuOpen ? <VisaChevronUpTiny /> : <VisaChevronDownTiny />} />\n              </Button>\n\n              {mobileLabel3MenuOpen && (\n                <Tabs orientation=\"vertical\" id={`${id}-account-sub-menu`}>\n                  {label3SubItems.map(label3SubItem => (\n                    <Tab key={label3SubItem.id} id={label3SubItem.id}>\n                      <Button\n                        colorScheme=\"tertiary\"\n                        element={<a href={label3SubItem.href}>{label3SubItem.tabLabel}</a>}\n                      />\n                    </Tab>\n                  ))}\n                </Tabs>\n              )}\n            </Tab>\n            <Tab>\n              <Button\n                buttonSize=\"large\"\n                colorScheme=\"tertiary\"\n                style={{ wordBreak: 'break-word', blockSize: 'max-content' } as CSSProperties}\n              >\n                Notifications\n                <Badge badgeVariant=\"number\" style={{ position: 'relative' }} tag=\"sup\">\n                  3\n                </Badge>\n              </Button>\n            </Tab>\n            <Divider dividerType=\"decorative\"></Divider>\n            <Tab tag=\"div\">\n              <Button\n                aria-expanded={mobileAccountMenuOpen}\n                aria-controls={`${id}-account-sub-menu`}\n                aria-label=\"Alex Miller\"\n                buttonSize=\"large\"\n                colorScheme=\"tertiary\"\n                onClick={() => setMobileAccountMenuOpen(!mobileAccountMenuOpen)}\n              >\n                <VisaAccountLow />\n                Alex Miller\n                <TabSuffix element={mobileAccountMenuOpen ? <VisaChevronUpTiny /> : <VisaChevronDownTiny />} />\n              </Button>\n              {mobileAccountMenuOpen && (\n                <Tabs orientation=\"vertical\" id={`${id}-account-sub-menu`}>\n                  {accountSubItems.map(accountSubItem => (\n                    <Tab key={accountSubItem.id} id={accountSubItem.id}>\n                      <Button\n                        colorScheme=\"tertiary\"\n                        element={<a href={accountSubItem.href}>{accountSubItem.tabLabel}</a>}\n                      />\n                    </Tab>\n                  ))}\n                </Tabs>\n              )}\n            </Tab>\n          </Tabs>\n        </Nav>\n      </UtilityFragment>\n    </div>\n  );\n};"
       }
     ]
@@ -316,7 +482,19 @@
     "component": "Input",
     "description": "A form input component that allows users to enter and edit text data. Provides accessible text input functionality with support for various input types and validation states.",
     "category": "Form Controls",
-    "tags": ["input", "form", "text field", "user input", "data entry", "validation", "accessible", "text", "password", "masked input"],
+    "tags": [
+      "input",
+      "input field",
+      "form",
+      "text field",
+      "user input",
+      "data entry",
+      "validation",
+      "accessible",
+      "text",
+      "password",
+      "masked input"
+    ],
     "variants": [
       {
         "name": "Input",
@@ -347,14 +525,24 @@
         "name": "Input with leading icon",
         "description": "A input field with a leading icon",
         "code": "import { VisaAccountLow } from '@visa/nova-icons-react';\nimport { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\n// TIP: Customize this ID, pass it as a prop, or auto-generate it with useId() from @react\nconst id = 'input-leading-icon';\n\nexport const LeadingIconInput = () => {\n  return (\n    <Utility vFlex vFlexCol vGap={4}>\n      <Label htmlFor={id}>Label (required)</Label>\n      <InputContainer>\n        <Utility vFlex vFlexCol>\n          <VisaAccountLow />\n        </Utility>\n        <Input aria-required=\"true\" id={id} type=\"text\" />\n      </InputContainer>\n    </Utility>\n  );\n};"
-}
+      }
     ]
   },
   {
     "component": "Link",
     "description": "A navigation component that creates clickable links to other pages or sections. Supports both standalone and inline link styles with proper accessibility attributes.",
-    "category": "Navigation", 
-    "tags": ["link", "navigation", "anchor", "hyperlink", "url", "routing", "clickable", "inline", "accessibility"],
+    "category": "Navigation",
+    "tags": [
+      "link",
+      "navigation",
+      "anchor",
+      "hyperlink",
+      "url",
+      "routing",
+      "clickable",
+      "inline",
+      "accessibility"
+    ],
     "variants": [
       {
         "name": "Link",
@@ -370,14 +558,25 @@
         "name": "Link that opens in a new tab",
         "description": "A standalone link that opens the destination in a new browser tab or window.",
         "code": "import { VisaMaximizeTiny } from '@visa/nova-icons-react';\nimport { Link } from '@visa/nova-react';\n\nexport const NewTabLink = () => {\n  return (\n    <Link\n      aria-label=\"Destination label (opens in a new tab)\"\n      href=\"./link\"\n      noUnderline\n      target=\"_blank\"\n      rel=\"noopener noreferrer\"\n    >\n      Destination label\n      <VisaMaximizeTiny />\n    </Link>\n  );\n};"
-}
+      }
     ]
   },
   {
     "component": "Listbox",
     "description": "A selectable list component that allows users to choose one or multiple options from a predefined set. Provides keyboard navigation and accessibility support.",
     "category": "Form Controls",
-    "tags": ["listbox", "selection", "options", "multi-select", "single-select", "form", "choice", "accessible", "keyboard navigation"],
+    "tags": [
+      "listbox",
+      "list box",
+      "selection",
+      "options",
+      "multi-select",
+      "single-select",
+      "form",
+      "choice",
+      "accessible",
+      "keyboard navigation"
+    ],
     "variants": [
       {
         "name": "Single-select listbox",
@@ -395,7 +594,17 @@
     "component": "Navigation drawer",
     "description": "A slide-out navigation panel that provides hierarchical site navigation and user account access. Can be opened and closed to save screen space.",
     "category": "Navigation",
-    "tags": ["drawer", "sidebar", "navigation", "menu", "modal", "slide-out", "hierarchical", "collapsible", "mobile-friendly"],
+    "tags": [
+      "drawer",
+      "sidebar",
+      "navigation",
+      "menu",
+      "modal",
+      "slide-out",
+      "hierarchical",
+      "collapsible",
+      "mobile-friendly"
+    ],
     "variants": [
       {
         "name": "Navigation Drawer",
@@ -408,7 +617,17 @@
     "component": "Pagination",
     "description": "A navigation component for browsing through multiple pages of content. Provides controls for moving between pages and jumping to specific page numbers.",
     "category": "Navigation",
-    "tags": ["pagination", "paging", "navigation", "page numbers", "previous", "next", "first", "last", "content navigation"],
+    "tags": [
+      "pagination",
+      "paging",
+      "navigation",
+      "page numbers",
+      "previous",
+      "next",
+      "first",
+      "last",
+      "content navigation"
+    ],
     "variants": [
       {
         "name": "Pagination",
@@ -426,7 +645,16 @@
     "component": "Panel",
     "description": "A modal dialog component that displays content in an overlay. Provides focus trapping and accessible modal behavior for displaying additional information or forms.",
     "category": "Layout",
-    "tags": ["panel", "modal", "dialog", "overlay", "popup", "focus trap", "accessible", "content container"],
+    "tags": [
+      "panel",
+      "modal",
+      "dialog",
+      "overlay",
+      "popup",
+      "focus trap",
+      "accessible",
+      "content container"
+    ],
     "variants": [
       {
         "name": "Modal panel",
@@ -439,7 +667,17 @@
     "component": "Progress",
     "description": "A visual indicator component that shows the progress of a task or loading state. Supports both determinate and indeterminate progress states.",
     "category": "Feedback",
-    "tags": ["progress", "loading", "indicator", "status", "linear", "indeterminate", "task progress", "visual feedback"],
+    "tags": [
+      "progress",
+      "progress bar",
+      "loading",
+      "indicator",
+      "status",
+      "linear",
+      "indeterminate",
+      "task progress",
+      "visual feedback"
+    ],
     "variants": [
       {
         "name": "Linear Progress Indicator",
@@ -457,7 +695,16 @@
     "component": "Radio",
     "description": "A form control that allows users to select a single option from a group of mutually exclusive choices. Provides accessible radio button functionality.",
     "category": "Form Controls",
-    "tags": ["radio", "selection", "single choice", "form", "mutually exclusive", "group", "accessible", "option"],
+    "tags": [
+      "radio",
+      "selection",
+      "single choice",
+      "form",
+      "mutually exclusive",
+      "group",
+      "accessible",
+      "option"
+    ],
     "variants": [
       {
         "name": "Radio button",
@@ -475,7 +722,16 @@
     "component": "Select",
     "description": "A dropdown form control that allows users to choose from a list of predefined options. Supports single selection with keyboard navigation.",
     "category": "Form Controls",
-    "tags": ["select", "dropdown", "form", "options", "choice", "single selection", "keyboard navigation", "accessible"],
+    "tags": [
+      "select",
+      "dropdown",
+      "form",
+      "options",
+      "choice",
+      "single selection",
+      "keyboard navigation",
+      "accessible"
+    ],
     "variants": [
       {
         "name": "Select",
@@ -498,7 +754,17 @@
     "component": "Switch",
     "description": "A toggle control that allows users to turn an option on or off. Provides binary state control with clear visual feedback.",
     "category": "Form Controls",
-    "tags": ["switch", "toggle", "binary", "on off", "form", "control", "state", "boolean", "accessible"],
+    "tags": [
+      "switch",
+      "toggle",
+      "binary",
+      "on off",
+      "form",
+      "control",
+      "state",
+      "boolean",
+      "accessible"
+    ],
     "variants": [
       {
         "name": "Switch",
@@ -511,7 +777,17 @@
     "component": "Table",
     "description": "A structured data display component that organizes information in rows and columns. Supports various styling options including borders and responsive design.",
     "category": "Data Display",
-    "tags": ["table", "data", "rows", "columns", "structured", "grid", "tabular", "borders", "responsive"],
+    "tags": [
+      "table",
+      "data",
+      "rows",
+      "columns",
+      "structured",
+      "grid",
+      "tabular",
+      "borders",
+      "responsive"
+    ],
     "variants": [
       {
         "name": "Table with borders",
@@ -524,7 +800,17 @@
     "component": "Tabs",
     "description": "A navigation component that organizes content into separate panels accessible via clickable tabs. Supports both horizontal and vertical orientations.",
     "category": "Navigation",
-    "tags": ["tabs", "tablist", "content organization", "panels", "navigation", "horizontal", "vertical", "accessible", "keyboard navigation"],
+    "tags": [
+      "tabs",
+      "tablist",
+      "content organization",
+      "panels",
+      "navigation",
+      "horizontal",
+      "vertical",
+      "accessible",
+      "keyboard navigation"
+    ],
     "variants": [
       {
         "name": "Vertical tablist",
@@ -542,10 +828,19 @@
     "component": "Toggle button",
     "description": "A button component that maintains pressed/unpressed states. Supports both single-select and multi-select toggle functionality with visual state indicators.",
     "category": "Form Controls",
-    "tags": ["toggle", "button", "pressed state", "single select", "multi select", "group", "state management", "visual feedback"],
+    "tags": [
+      "toggle",
+      "button",
+      "pressed state",
+      "single select",
+      "multi select",
+      "group",
+      "state management",
+      "visual feedback"
+    ],
     "variants": [
       {
-        "name": "Singe-select toggle",
+        "name": "Single-select toggle",
         "description": "A group of toggle buttons where only one can be active at a time, similar to radio button behavior",
         "code": "import { Toggle, ToggleContainer, UtilityFragment } from '@visa/nova-react';\nimport { useState } from 'react';\n\n// TIP: Customize this ID, pass it as a prop, or auto-generate it with useId() from @react\nconst id = 'default-toggle';\n\nconst options = [\n  { label: 'Label 1', id: `${id}-label-1`, defaultSelected: true },\n  { label: 'Label 2', id: `${id}-label-2` },\n  { label: 'Label 3', id: `${id}-label-3` },\n];\n\nexport const DefaultToggles = () => {\n  const [togglePressedState, setTogglePressedState] = useState(options.map(o => !!o.defaultSelected));\n\n  const handleSingleSelectTogglePress = (pressedIndex: number) => {\n    setTogglePressedState(options.map((_, buttonIndex) => pressedIndex === buttonIndex));\n  };\n\n  return (\n    <ToggleContainer>\n      {options.map((option, optionIndex) => (\n        <UtilityFragment key={option.id} vGap={6}>\n          <Toggle\n            tag=\"button\"\n            aria-pressed={togglePressedState[optionIndex]}\n            onClick={() => handleSingleSelectTogglePress(optionIndex)}\n          >\n            {option.label}\n          </Toggle>\n        </UtilityFragment>\n      ))}\n    </ToggleContainer>\n  );\n};"
       },
@@ -560,7 +855,17 @@
     "component": "Tooltip",
     "description": "A contextual popup component that displays additional information when users hover over or focus on an element. Provides accessible supplementary content.",
     "category": "Feedback",
-    "tags": ["tooltip", "popup", "contextual", "hover", "focus", "information", "accessible", "supplementary", "positioning"],
+    "tags": [
+      "tooltip",
+      "popup",
+      "contextual",
+      "hover",
+      "focus",
+      "information",
+      "accessible",
+      "supplementary",
+      "positioning"
+    ],
     "variants": [
       {
         "name": "Top positioned tooltip",
@@ -573,7 +878,17 @@
     "component": "Vertical navigation",
     "description": "A contextual popup component that displays additional information when users hover over or focus on an element. Provides accessible supplementary content.",
     "category": "Feedback",
-    "tags": ["tooltip", "popup", "contextual", "hover", "focus", "information", "accessible", "supplementary", "positioning"],
+    "tags": [
+      "vertical nav",
+      "sidebar",
+      "navigation",
+      "left nav",
+      "menu",
+      "collapse",
+      "drawer",
+      "primary nav",
+      "hierarchical"
+    ],
     "variants": [
       {
         "name": "Vertical Navigation",

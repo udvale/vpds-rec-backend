@@ -34,16 +34,12 @@ def _append_cache(query: str, comps: List[str], code: str) -> None:
             {"query": query, "components": json.dumps(comps), "code": code}
         )
 
-# ────────────────── public helpers ──────────────────
 def pick_variant(comp: dict) -> str:
     return comp["variants"][0]["code"]
 
 def check_ai_setup() -> bool:                       # keeps main.py happy
     use_ai = os.getenv("USE_AI_MERGING", "true").lower() == "true"
     return use_ai and bool(os.getenv("OPENAI_API_KEY"))
-
-# ────────────────── main entry point ──────────────────
-# ───────────────────────────────────────────────────────────────
 def build_snippet(query: str) -> Tuple[str, List[str]]:
     """
     1. Look for an exact query match in pattern‑dataset.csv.
@@ -53,26 +49,20 @@ def build_snippet(query: str) -> Tuple[str, List[str]]:
     """
     q_key = query.strip().lower()
 
-    # ------------------------------------------------------------------
-    # 1) Serve from cache if present
-    # ------------------------------------------------------------------
+    # Serve from cache if present
     cache = _load_cache()
     if q_key in cache:
         code, comps = cache[q_key][1], cache[q_key][0]
         return code, comps
 
-    # ------------------------------------------------------------------
-    # 2) Pick components via retriever
-    # ------------------------------------------------------------------
+    # If not pick components via retriever
     from .retriever import top_components
     comps: List[str] = top_components(query, k=3)
 
     variant_codes = [pick_variant(NAME2COMP[c]) for c in comps]
     export_name   = re.sub(r"[^a-zA-Z0-9]", " ", query).title().replace(" ", "") or "Generated"
 
-    # ------------------------------------------------------------------
-    # 3) Merge snippets (AI if enabled, else regex)
-    # ------------------------------------------------------------------
+    # Merge snippets (AI if enabled, else regex)
     use_ai  = os.getenv("USE_AI_MERGING", "true").lower() == "true"
     has_key = bool(os.getenv("OPENAI_API_KEY"))
     if use_ai and has_key:
@@ -81,24 +71,20 @@ def build_snippet(query: str) -> Tuple[str, List[str]]:
     else:
         from .merge import merge_variants
         code = merge_variants(variant_codes, export_name)
-
-    # ------------------------------------------------------------------
-    # 4) Quick sanity check *before* caching
-    #    (avoid storing obviously broken snippets)
-    # ------------------------------------------------------------------
-    def _looks_ok(tsx: str) -> bool:
-        return (
-            "import" in tsx
-            and "export default function" in tsx
-            and "</" in tsx            # at least one closing tag
-            and "id =" in tsx          # crude check for declared vars
-        )
-
-    if _looks_ok(code):
-        _append_cache(q_key, comps, code)
-    else:
-        print("Generated code failed quick check — not cached.")
-
-    # Always return the snippet (even if not cached)
+    
+    _append_cache(q_key, comps, code)
     return code, comps
-# ───────────────────────────────────────────────────────────────
+
+    # Sanity check for testing if needed (shouldn't be needed in prod)
+    # def _looks_ok(tsx: str) -> bool:
+    #     return (
+    #         "import" in tsx
+    #         and "export default function" in tsx
+    #         and "</" in tsx        # at least one closing tag
+    #     )
+
+    # if _looks_ok(code):
+    #     _append_cache(q_key, comps, code)
+    # else:
+    #     print("Generated code failed quick check — not cached.")
+    

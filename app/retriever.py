@@ -112,6 +112,6 @@ def top_components(query: str, k: int = 3) -> List[str]:
     # Debug output
     print(f"📦 Selected components: {final_result}")
     if scored_components:
-        print(f"📊 Top scored components: {[(name, f'{score:.1f}') for name, score in scored_components[:5]]}")
+        print(f"Top scored components: {[(name, f'{score:.1f}') for name, score in scored_components[:5]]}")
     
     return final_result

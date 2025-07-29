@@ -92,8 +92,8 @@ def merge_components_with_ai(
     try:
         prompt = build_merge_prompt(snippets, query, export_name)
         
-        print(f"🤖 Attempting AI merge for query: '{query}'")
-        print(f"📝 Components to merge: {len(snippets)} snippets")
+        print(f"Attempting AI merge for query: '{query}'")
+        print(f"Components to merge: {len(snippets)} snippets")
 
         response = _llm_call(
             model="gpt-4o-mini",           
@@ -126,7 +126,7 @@ def merge_components_with_ai(
         if not raw:
             raise Exception("AI returned empty response")
 
-        print("🔎 RAW AI RESPONSE (first 500 chars):\n", raw[:500])
+        print("RAW AI RESPONSE (first 500 chars):\n", raw[:500])
 
         merged_code = extract_code_from_response(raw)
 
@@ -141,11 +141,10 @@ def merge_components_with_ai(
         
         if not merged_code or len(merged_code) < 50:
             raise Exception("AI returned unusable code")
-            
-        print("✅ AI merge successful")
+
         return merged_code
 
     except Exception as exc:
-        print(f"❌ AI merge failed: {exc}")
-        print("🔄 Falling back to manual merge...")
+        print(f"AI merge failed: {exc}")
+        print("Doing manual merge...")
         return merge_variants(snippets, export_name)
