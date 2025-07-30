@@ -25,7 +25,8 @@ The backend interprets user intent and suggests appropriate component code by ei
 - If not found, attempts to match against the internal pattern rules (or optionally generate via OpenAI).
 - Updates the CSV cache automatically with new patterns and results.
 
- ![VPDS Backend logic (1)](https://github.com/user-attachments/assets/83436a50-5788-4852-90f7-80a6b16a3104)
+ <img width="960" height="682" alt="image" src="https://github.com/user-attachments/assets/04d8849e-215d-4013-9809-59b15f13434f" />
+
 
 ---
 
