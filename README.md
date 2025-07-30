@@ -1,8 +1,6 @@
 # VPDS Component Suggestion API (Backend)
 
-This is the backend API for the **VPDS Component Suggestion Tool**, that allows users to input a natural language description (like _"login form with email input and submit button"_) and receive TSX code snippets using **Visa's Product Design System (VPDS)** components.
-
-The backend interprets user intent and suggests appropriate component code by either:
+The backend API for the **VPDS Component Suggestion Tool**, that allows users to input a natural language description and receive TSX code snippet. The backend interprets user intent and suggests appropriate component code by either:
 - Looking it up from a cached dataset (csv file) (for known patterns)
 - Or generating the result by combining known VPDS components
 
@@ -26,8 +24,7 @@ The backend interprets user intent and suggests appropriate component code by ei
 - Updates the CSV cache automatically with new patterns and results.
 
  <img width="960" height="682" alt="image" src="https://github.com/user-attachments/assets/04d8849e-215d-4013-9809-59b15f13434f" />
-
-
+ 
 ---
 
 ## 🗂 Project Structure
